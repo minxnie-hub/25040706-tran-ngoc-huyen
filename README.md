@@ -1,23 +1,29 @@
 # Portfolio Trần Ngọc Huyền — 25040706
 
-Website portfolio môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
+Portfolio môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
 
 ## Deploy GitHub Pages
 
-Workflow trong `.github/workflows/deploy.yml` đăng trực tiếp thư mục `dist`, vì vậy không còn phụ thuộc vào bước `npm ci` trên GitHub Actions.
+Bản web đã build sẵn nằm trong thư mục `site/`. Workflow không chạy `npm install` hoặc `npm ci`, nên tránh lỗi npm trên GitHub Actions.
 
-1. Đưa toàn bộ nội dung thư mục dự án lên nhánh `main`.
-2. Vào **Settings → Pages**.
-3. Ở **Build and deployment → Source**, chọn **GitHub Actions**.
-4. Mở tab **Actions** và chạy lại workflow **Deploy to GitHub Pages** nếu cần.
+1. Thay toàn bộ nội dung repo bằng các file trong thư mục này.
+2. Commit và push lên nhánh `main`.
+3. Vào **Settings → Pages → Build and deployment → Source** và chọn **GitHub Actions**.
+4. Mở tab **Actions** để theo dõi workflow `Deploy to GitHub Pages`.
 
-## Chỉnh sửa source
+> Không xóa thư mục `site/`: GitHub Pages lấy website trực tiếp từ thư mục này.
 
-Sau khi sửa mã nguồn:
+## Chạy source khi cần chỉnh sửa
 
 ```bash
 npm install
+npm run dev
+```
+
+Build mới:
+
+```bash
 npm run build
 ```
 
-Commit cả thư mục `dist` mới để GitHub Pages triển khai phiên bản vừa sửa.
+Sau đó sao chép toàn bộ nội dung `dist/` sang `site/` trước khi commit.

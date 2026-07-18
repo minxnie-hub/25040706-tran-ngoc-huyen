@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.tsbuildinfo
 .DS_Store
+
+# Do not ignore site/: it contains the committed prebuilt GitHub Pages website.

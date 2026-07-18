@@ -24,13 +24,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Verify prebuilt website
+        run: |
+          test -f site/index.html
+          test -d site/assets
+          echo "Prebuilt website is ready."
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload prebuilt website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./site
 
       - name: Deploy to GitHub Pages
         id: deployment
