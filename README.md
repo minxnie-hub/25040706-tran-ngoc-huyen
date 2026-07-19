@@ -27,3 +27,7 @@ npm run build
 ```
 
 Sau đó sao chép toàn bộ nội dung `dist/` sang `site/` trước khi commit.
+
+## Font tiếng Việt
+
+Toàn bộ giao diện dùng font hệ thống hỗ trợ đầy đủ tiếng Việt. Font Georgia đã được loại bỏ khỏi các tiêu đề để tránh lỗi giãn ký tự có dấu trên Windows/Chrome.
